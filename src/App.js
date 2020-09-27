@@ -4,23 +4,18 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
+import ShopPage from "./pages/shop/shop.component";
 
 //Route only passes history, match, location props in one child component
 //so in the first route only HomePage component gets access to these properties
 //prop drilling is wrong so we will supercharge the components below with withRouter HOC
-
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-);
 
 function App() {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/hats" component={HatsPage} />
+        <Route path="/shop" component={ShopPage} />
       </Switch>
     </div>
   );
